@@ -1,0 +1,190 @@
+<%- include("partials/header") %>
+<div class="text-center" style="margin-top:50px">
+  <a class="btn btn-secondary btn-sm" href="/search">Search By Country</a>
+  </div>
+</div>
+<div class="container text-center">
+  <div class="row">
+    <div class="col-md-12" style="text-align:center;">
+      <div class="container" style="width:70%; margin: 3rem auto 5rem auto">
+        <h1 style="text-align:center;margin-bottom:2rem"><i class="fa fa-globe"></i> GLOBAL </h1>
+        <table class="table table-hover table-dark">
+          <thead>
+            <tr>
+              <th>Type Of Cases</th>
+              <th>Number Of Cases</th>
+            </tr>
+          </thead>
+           <tbody>
+             <tr>
+               <th>Confirmed</th>
+               <th><%= g.cases %></th>
+             </tr>
+             <tr>
+               <th>Active</th>
+               <th><%= g.active %></th>
+             </tr>
+             <tr>
+               <th>Recovered</th>
+               <th><%= g.recovered %></th>
+             </tr>
+             <tr>
+               <th>Deaths</th>
+               <th><%= g.deaths %></th>
+             </tr>
+           </tbody>
+        </table>
+      </div>
+    </div>
+    </div>
+  </div>
+      <h1 style="text-align:center; margin:2rem auto 2rem auto;font-size:3.0rem;background:#d6535e;padding: 1rem auto 1.5rem auto;padding:2rem 0">Top-5 Countries</h1>
+     <div class="container" style="font-size:0.9rem;margin-top:4.6rem">
+       <div class="row" style="margin-bottom:6rem">
+         <div class="col-md-6 col-sm-12" style="padding-right:7rem;padding-left:2rem">
+           <h4 style="text-align:center;margin-bottom:1.5rem">CONFIRMED</h4>
+            <table class="table table-dark table-hover">
+              <thead>
+                <tr>
+                  <th>
+                    Country
+                  </th>
+                  <th>
+                    Number Of Cases
+                  </th>
+                  <th>
+                    Number of tests
+                  </th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <% tc.forEach(function(a){ %>
+                  <tr>
+                       <th>
+                         <%=a.country%>
+                       </th>
+                       <th>
+                         <%=a.cases%>
+                       </th>
+                       <th>
+                         <%=a.totalTests%>
+                       </th>
+                  </tr>
+               <% });%>
+              </tbody>
+
+            </table>
+         </div>
+         <div class="col-md-6 col-sm-12" style="padding-right:7rem;padding-left:2rem">
+           <h4 style="text-align:center;margin-bottom:1.5rem">ACTIVE</h4>
+            <table class="table table-dark table-hover">
+              <thead>
+                <tr>
+                  <th>
+                    Country
+                  </th>
+                  <th>
+                    Number Of Cases
+                  </th>
+                  <th>
+                    Number of tests
+                  </th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <% ta.forEach(function(d){ %>
+                  <tr>
+                       <th>
+                         <%=d.country%>
+                       </th>
+                       <th>
+                         <%=d.active%>
+                       </th>
+                       <th>
+                         <%=d.totalTests%>
+                       </th>
+                  </tr>
+               <% });%>
+              </tbody>
+            </table>
+         </div>
+         </div>
+         <div class="row" style="margin-bottom:5rem">
+         <div class="col-md-6 col-sm-12" style="padding-right:7rem;padding-left:2rem">
+           <h4 style="text-align:center;margin-bottom:1.5rem">RECOVERED</h4>
+            <table class="table table-dark table-hover">
+              <thead>
+                <tr>
+                  <th>
+                    Country
+                  </th>
+                  <th>
+                    Number Of Cases
+                  </th>
+                  <th>
+                    Number of tests
+                  </th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <% tr.forEach(function(b){ %>
+                  <tr>
+                       <th>
+                         <%=b.country%>
+                       </th>
+                       <th>
+                         <%=b.recovered%>
+                       </th>
+                       <th>
+                         <%=b.totalTests%>
+                       </th>
+                  </tr>
+               <% });%>
+              </tbody>
+
+            </table>
+         </div>
+         <div class="col-md-6 col-sm-12" style="padding-right:7rem;padding-left:2rem">
+           <h4 style="text-align:center;margin-bottom:1.5rem">DEATHS</h4>
+            <table class="table table-dark table-hover">
+              <thead>
+                <tr>
+                  <th>
+                    Country
+                  </th>
+                  <th>
+                    Number Of Cases
+                  </th>
+                  <th>
+                    Number of tests
+                  </th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <% td.forEach(function(c){ %>
+                  <tr>
+                       <th>
+                         <%=c.country%>
+                       </th>
+                       <th>
+                         <%=c.deaths%>
+                       </th>
+                       <th>
+                         <%=c.totalTests%>
+                       </th>
+                  </tr>
+               <% });%>
+              </tbody>
+
+            </table>
+         </div>
+        </div>
+      </div>
+
+
+
+<%- include("partials/footer.ejs") %>

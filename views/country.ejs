@@ -1,0 +1,85 @@
+<%- include("partials/header") %>
+<div class="text-center" style="margin-top:50px">
+  <a class="btn btn-secondary btn-sm" href="/search">Search By Country</a>
+  </div>
+</div>
+
+<div class="container-fluid" style="width:90%; margin: 3rem auto 5rem auto">
+  <h1 style="text-align:center;margin-bottom:4rem;text-transform:uppercase;font-size:3.5rem"><%=country.country%></h1>
+  <div class="row" style="margin-top:3rem">
+    <div class="col-md-4 col-sm-12">
+      <table class="table table-hover table-dark" style="border-radius:5px;border-top:0">
+        <thead>
+          <h4 class="display-6" style="text-align:center;margin-bottom:1.5rem">TOTAL CASES</h4>
+          <tr>
+            <th>Type Of Cases</th>
+            <th>Number Of Cases</th>
+          </tr>
+        </thead>
+         <tbody>
+           <tr>
+             <th>Confirmed</th>
+             <th><%= country.cases %></th>
+           </tr>
+           <tr>
+             <th>Active</th>
+             <th><%= country.active %></th>
+           </tr>
+           <tr>
+             <th>Recovered</th>
+             <th><%= country.recovered %></th>
+           </tr>
+           <tr>
+             <th>Deaths</th>
+             <th><%= country.deaths %></th>
+           </tr>
+           <tr>
+             <th>Cases Per Million</th>
+             <th><%= country.casesPerOneMillion %></th>
+           </tr>
+         </tbody>
+      </table>
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <table class="table table-hover table-dark" style="border-radius:5px;">
+        <thead>
+          <h4 class="display-6" style="text-align:center;margin-bottom:1.5rem">TODAY'S CASES</h4>
+          <tr>
+            <th>Type Of Cases</th>
+            <th>Number Of Cases</th>
+          </tr>
+        </thead>
+         <tbody>
+           <tr>
+             <th>Confirmed</th>
+             <th><%= country.todayCases %></th>
+           </tr>
+           <tr>
+           <tr>
+             <th>Deaths</th>
+             <th><%= country.todayDeaths %></th>
+           </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <table class="table table-hover table-dark" style="border-radius:5px;">
+        <thead>
+          <h4 class="display-6" style="text-align:center;margin-bottom:1.5rem">TESTS</h4>
+        </thead>
+         <tbody>
+           <tr>
+             <th>Total Tests</th>
+             <th><%= country.totalTests %></th>
+           </tr>
+           <tr>
+             <th>Tests Per Million</th>
+             <th><%= country.testsPerOneMillion %></th>
+           </tr>
+         </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<%- include("partials/footer.ejs") %>
